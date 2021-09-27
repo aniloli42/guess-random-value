@@ -16,7 +16,7 @@ const generatedNumber: number = generateNumber(50, 60)
 const inputNumber = 55
 
 // check the condition where the number matches or lower or greater
-function checkInput(generatedNumber: number, inputNumber: number): any {
+function checkInput( inputNumber: number): any {
   if (inputNumber < generatedNumber)
     return `Your guess is wrong. Value is greater than ${inputNumber}.`
   if (inputNumber > generatedNumber)
@@ -25,6 +25,6 @@ function checkInput(generatedNumber: number, inputNumber: number): any {
     return `Your guess is correct. Value is ${inputNumber}.`
 }
 
-console.log(checkInput(generatedNumber, inputNumber))
+console.log(checkInput( inputNumber))
 
 
