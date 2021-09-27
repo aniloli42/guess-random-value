@@ -1,4 +1,4 @@
-# guess-random-value
+# Guess Random Value
 
 This is the simple typescript code where random number is generate and check the input is equal to generated number or not.
 
