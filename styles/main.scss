@@ -1,0 +1,86 @@
+@import "./_variables";
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	max-width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: $main;
+
+	.content {
+		padding: 2.5em 2em;
+		background-color: $contentBackground;
+		border-radius: 1em;
+		box-shadow: 0.1em 0.3em 0.5em $contentShadow;
+	}
+}
+
+form {
+	width: 100%;
+
+	input {
+		@extend form;
+		outline: none;
+		border: none;
+		height: 2.1rem;
+
+		padding-inline: 0.8em;
+
+		margin-block: 1em 0.6em;
+		font-size: 1.01rem;
+	}
+
+	button {
+		@extend form;
+		@extend input;
+
+		font-size: 1rem;
+		border-radius: 0.1em;
+
+		margin: 0;
+		color: $buttonBackground;
+		background-color: $buttonColor;
+		cursor: pointer;
+		transition: all 0.3s ease-in;
+
+		&:hover {
+			background-color: $buttonBackground;
+			border: 1px solid $buttonColor;
+			color: $buttonColor;
+		}
+	}
+}
+
+h1 {
+	color: $heading;
+}
+
+#displayResult {
+	padding-block-start: 1rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	display: none;
+
+	&.visible {
+		display: revert;
+	}
+
+	&.success {
+		color: $success;
+	}
+
+	&.warning {
+		color: $warning;
+	}
+}
