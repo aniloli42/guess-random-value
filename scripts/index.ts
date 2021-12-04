@@ -9,7 +9,11 @@ function generateNumber(min: number = 0, max: number = 100): number {
 	return Math.ceil(Math.random() * (max - min) + min)
 }
 
-const generatedNumber: number = generateNumber()
+let generatedNumber: number = generateNumber()
+
+function changeNumber() {
+	generatedNumber = generateNumber()
+}
 
 // check the condition where the number matches or lower or greater
 function checkInput(inputNumber: number): any {
@@ -23,11 +27,13 @@ function checkInput(inputNumber: number): any {
 			message: `Your guess is wrong. Value is less than ${inputNumber}.`,
 			type: "warn",
 		}
-	if (inputNumber === generatedNumber)
+	if (inputNumber === generatedNumber) {
+		changeNumber()
 		return {
 			message: `Your guess is correct. Value is ${inputNumber}.`,
 			type: "success",
 		}
+	}
 }
 
 export default checkInput
